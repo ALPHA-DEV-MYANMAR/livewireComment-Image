@@ -18,6 +18,14 @@ class Login extends Component
             'password' => 'required'
         ]);
 
+        $credentials = [
+            'email' => $this->email,
+            'password' => $this->password,
+        ];
+        if (Auth::attempt($credentials)) {
+            dd('SuccessToLogin');
+        }
+
     }
 
     public function render()
